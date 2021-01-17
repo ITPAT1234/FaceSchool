@@ -1,0 +1,58 @@
+.Login_page {
+    max-width: 500px;
+    margin: auto;
+    padding: 0 15px;
+    color: #444;
+    margin-top : 100px;  
+  }
+  
+  .Login_page h2 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin: 20px 0;
+    letter-spacing: 1.5px;
+    padding-left: 35%;
+  }
+  
+  .Login_page input {
+    width: 100%;
+    height: 45px;
+    margin: 10px 0;
+    border: 2px solid #777;
+    outline: none;
+    padding: 0 10px;
+  }
+  
+  .Login_page p {
+    margin: 10px 0;
+    padding: 0 150px;
+  }
+  
+  .Login_page .row{
+    padding-left: 120px;
+  }
+  
+  .Login_page button {
+    width: 200px;
+    padding: 10px 0;
+    color: white;
+    background: #282c34;
+    text-transform: uppercase;
+    margin-right: 10px;
+  }
+  
+  .Login_page .register_link {
+    color: #007791;
+    text-decoration: none;
+  }
+  
+  .Login_page .error_message {
+    color: crimson;
+    margin-bottom: 10px;
+  }
+  
+  .Login_page label {
+    text-transform: uppercase;
+    font-size: 18px
+  }
+  
