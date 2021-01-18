@@ -35,6 +35,10 @@ const NavBar = (props) => {
         </li>
     }
 
+    const transForm = {
+        transform: isLogged ? "translateY(-5px)" : 0
+    }
+
     return (
         <header>
             <div className="logo">
@@ -46,7 +50,7 @@ const NavBar = (props) => {
                     <i className="search icon"></i>
                 </button>
             </div>
-            <ul>
+            <ul style={transForm}>
                 <li>
                     <div className="cart-icon">
                         <span>0</span>
