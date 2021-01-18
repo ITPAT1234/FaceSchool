@@ -3,22 +3,22 @@ import { Router, Route } from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {dispatchLogin, fetchUser, dispatchGetUser} from '../actions'
 import BrowserHistory from '../BrowserHistory';
+import NotFound from '../components/utils/NotFound/NotFound'
 import axios from 'axios'
 
 //Navbar
 import NavBar from './Navbar';
 //Form
 import LoginPage from '../components/Form/Login';
+import RegisterPage from '../components/Form/Register';
 //Page
-import HomePage from '../components/Page/Home'
+import HomePage from '../components/Page/Home';
 
 const App =()=>{
 
     const dispatch = useDispatch()
     const token = useSelector(state => state.token)
     const auth = useSelector(state => state.auth)
-    console.log(token);
-    console.log(auth)
 
     useEffect(() => {
         const firstLogin = localStorage.getItem('firstLogin')
@@ -50,7 +50,8 @@ const App =()=>{
             <Router history={BrowserHistory}>
                 <NavBar/>
                 <Route exact path="/" component={HomePage} />
-                <Route exact path="/login" component={LoginPage} />
+                <Route exact path="/login" component={auth.isLogged ? NotFound : LoginPage} />
+                <Route exact path="/register" component={auth.isLogged ? NotFound : RegisterPage} />
             </Router>
         </div>
     )

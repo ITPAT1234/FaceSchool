@@ -1,4 +1,4 @@
-import {LOGIN, GET_USER,LOGOUT} from './types';
+import {LOGIN, GET_USER} from './types';
 import axios from 'axios';
 
 export const dispatchLogin = () => {
@@ -22,9 +22,4 @@ export const dispatchGetUser = (res) => {
             isAdmin: res.data.role === 1 ? true : false
         }
     }
-}
-
-export const Logout = () => async dispatch => {
-    const res = await axios.get('/user/logout')
-    dispatch({ type: LOGOUT, payload: res.data })
 }

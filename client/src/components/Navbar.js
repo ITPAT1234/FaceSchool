@@ -1,9 +1,8 @@
 import React from 'react';
-import { Logout } from '../actions'
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import history from '../BrowserHistory'
-import { connect } from 'react-redux';
+import axios from 'axios'
 import '../components/css/Navbar.css'
 
 
@@ -15,9 +14,10 @@ const NavBar = (props) => {
 
     const handleLogout = async () => {
         try {
-            await props.Logout();
+            await axios.get('/user/logout')
             localStorage.removeItem('firstLogin')
-            history.push('/')
+            window.location.reload();
+            history.push('/');
         } catch (err) {
             history.push('/');
         }
@@ -64,4 +64,4 @@ const NavBar = (props) => {
     )
 }
 
-export default connect(null,{ Logout })(NavBar);
+export default NavBar;
